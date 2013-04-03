@@ -1,3 +1,3 @@
 # Parkour
 
-A pygame game
+A pygame-made game
