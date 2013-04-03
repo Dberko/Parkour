@@ -42,32 +42,32 @@ class game:
 
 	def loop(self, run):
 
-			for event in pygame.event.get():
-				if event.type == pygame.QUIT:
-					pygame.quit()
-					sys.exit()
+		for event in pygame.event.get():
+			if event.type == pygame.QUIT:
+				pygame.quit()
+				sys.exit()
 
-			keys = pygame.key.get_pressed()
+		keys = pygame.key.get_pressed()
 
-			if keys[275]:
-				self.playerx += self.player_speed**2
-			if keys[276]:
-				self.playerx += -self.player_speed**2
+		if keys[275]:
+			self.playerx += self.player_speed**2
+		if keys[276]:
+			self.playerx += -self.player_speed**2
 
-			if self.playerx <= 0:
-				self.playerx = 0
-			if self.playerx >= self.width:
-				self.playerx = self.width
-			if self.playery >= self.height - self.player_height - self.floor_height:
-				self.playery = self.height - self.player_height - self.floor_height
+		if self.playerx <= 0:
+			self.playerx = 0
+		if self.playerx >= self.width:
+			self.playerx = self.width
+		if self.playery >= self.height - self.player_height - self.floor_height:
+			self.playery = self.height - self.player_height - self.floor_height
 
-			self.playery += self.gravity
-			if self.playery >= 400 - self.player_height:
-				self.playery = 400 - self.player_height 
+		self.playery += self.gravity
+		if self.playery >= 400 - self.player_height:
+			self.playery = 400 - self.player_height 
 
-			self.draw()
-			pygame.display.flip()
-			self.clock.tick(60)
+		self.draw()
+		pygame.display.flip()
+		self.clock.tick(60)
 game = game()
 	
 if __name__ == '__main__':
