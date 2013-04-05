@@ -5,15 +5,6 @@ import random
 import sys
 from pygame import key
 
-def set_timeout(func, sec):     
-    t = None
-    def func_wrapper():
-        func()  
-        t.cancel()
-    t = threading.Timer(sec, func_wrapper)
-    t.start()
-
-
 class game:
 	def __init__(self):
 		blocks = [200]
